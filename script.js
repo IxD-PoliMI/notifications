@@ -35,8 +35,8 @@ function persistentNotification() {
   }
   
   try {
-    navigator.serviceWorker.ready
-      .then((reg) => reg.showNotification("Hi there - persistent!"))
+    navigator.serviceWorker.getRegistration()
+      .then((reg) => {reg.showNotification("Hi there - persistent!")})
       .catch((err) => alert('Service Worker registration error: ' + err));
   } catch (err) {
     alert('Notification API error: ' + err);
