@@ -35,7 +35,7 @@ function persistentNotification() {
   }
   
   try {
-    navigator.serviceWorker.getRegistration()
+    navigator.serviceWorker.ready
       .then((reg) => reg.showNotification("Hi there - persistent!"))
       .catch((err) => alert('Service Worker registration error: ' + err));
   } catch (err) {
